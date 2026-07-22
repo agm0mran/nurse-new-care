@@ -1,0 +1,246 @@
+/* ===== RTL OVERRIDES ===== */
+[dir="rtl"] body {
+  font-family: 'Tajawal', sans-serif;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .site-nav {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-content {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-copy {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+[dir="rtl"] .hero-visual {
+  right: auto;
+  left: -80px;
+  border-radius: 0 50% 50% 0;
+}
+
+[dir="rtl"] .hero-shapes {
+  right: auto;
+  left: 5%;
+}
+
+[dir="rtl"] .hero-shape-1 {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .hero-shape-2 {
+  right: auto;
+  left: 30%;
+}
+
+[dir="rtl"] .hero-shape-3 {
+  right: auto;
+  left: 15%;
+}
+
+[dir="rtl"] .hero-stats {
+  text-align: right;
+}
+
+[dir="rtl"] .service-card::before {
+  transform-origin: right;
+}
+
+[dir="rtl"] .service-card:hover::before {
+  transform-origin: right;
+}
+
+[dir="rtl"] .service-link {
+  direction: ltr;
+  display: inline-flex;
+  align-items: center;
+}
+
+[dir="rtl"] .value-item {
+  text-align: right;
+}
+
+[dir="rtl"] .value-number {
+  align-self: flex-start;
+}
+
+[dir="rtl"] .step {
+  text-align: right;
+}
+
+[dir="rtl"] .booking-form-wrap {
+  text-align: right;
+}
+
+[dir="rtl"] .form-group input,
+[dir="rtl"] .form-group select,
+[dir="rtl"] .form-group textarea {
+  text-align: right;
+}
+
+[dir="rtl"] .form-group input[type="tel"] {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="rtl"] .testimonial-card {
+  text-align: right;
+}
+
+[dir="rtl"] .testimonial-author {
+  text-align: right;
+}
+
+[dir="rtl"] .t-nav--prev svg {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .t-nav--next svg {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .contact-band {
+  text-align: center;
+}
+
+[dir="rtl"] .contact-band p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[dir="rtl"] .site-footer {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-desc {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+[dir="rtl"] .footer-links a {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .footer-contact-list li {
+  text-align: right;
+}
+
+[dir="rtl"] .footer-bottom {
+  text-align: center;
+}
+
+[dir="rtl"] .section-heading {
+  text-align: center;
+}
+
+/* Float buttons move to left in RTL */
+[dir="rtl"] .float-contact {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .float-label {
+  right: auto;
+  left: calc(100% + 12px);
+}
+
+/* Toast notification in RTL */
+[dir="rtl"] .toast {
+  right: auto;
+  left: 24px;
+  border-left: none;
+  border-right: 4px solid #10B981;
+}
+
+[dir="rtl"] .toast.error {
+  border-right-color: #EF4444;
+}
+
+/* Page header */
+[dir="rtl"] .page-header {
+  text-align: center;
+}
+
+/* About mission */
+[dir="rtl"] .about-mission {
+  text-align: right;
+}
+
+/* Contact page */
+[dir="rtl"] .contact-info-item {
+  text-align: right;
+}
+
+[dir="rtl"] .contact-grid {
+  text-align: right;
+}
+
+/* Booking form header */
+[dir="rtl"] .booking-form-header {
+  text-align: right;
+}
+
+/* Process guide heading */
+[dir="rtl"] .process-guide .section-heading {
+  text-align: right !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Stats cards */
+[dir="rtl"] .stat-card {
+  text-align: center;
+}
+
+/* Team cards */
+[dir="rtl"] .team-card {
+  text-align: center;
+}
+
+[dir="rtl"] .testimonial-stars {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="rtl"] .form-group select {
+  background-position: left 12px center;
+}
+
+[dir="rtl"] .btn svg {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Hero stats border */
+[dir="rtl"] .hero-stats {
+  border-top: 1px solid var(--border);
+}
+
+/* Service page card */
+[dir="rtl"] .service-page-card {
+  text-align: right;
+}
+
+[dir="rtl"] .service-page-card ul li {
+  text-align: right;
+}
+
+/* Trust strip icons alignment on mobile */
+@media (max-width: 480px) {
+  [dir="rtl"] .trust-item {
+    text-align: right;
+  }
+}

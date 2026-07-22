@@ -1,0 +1,304 @@
+/* ===== 1200px ===== */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-visual {
+    width: 45%;
+  }
+
+  .hero-shapes {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* ===== 1024px ===== */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== 900px ===== */
+@media (max-width: 900px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-mission {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .hero-stat strong {
+    font-size: 1.4rem;
+  }
+
+  .services-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== 768px ===== */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all var(--transition);
+    gap: 4px;
+  }
+
+  .site-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 100px 20px 60px;
+    min-height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .hero-shapes {
+    display: none;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    gap: 32px;
+    margin-top: 36px;
+    padding-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+    margin: -30px 16px 0;
+    border-radius: var(--radius);
+  }
+
+  .trust-item {
+    padding: 24px 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 28px 24px;
+  }
+
+  .process-guide .section-heading {
+    text-align: center;
+  }
+
+  .booking-form-wrap {
+    padding: 28px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-inner {
+    padding: 28px 24px;
+  }
+
+  .t-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page-header {
+    padding: 110px 20px 40px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    padding: 24px 12px;
+  }
+
+  .stat-card strong {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== 480px ===== */
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-copy {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+
+  .hero-stats {
+    gap: 20px;
+  }
+
+  .hero-stat strong {
+    font-size: 1.2rem;
+  }
+
+  .trust-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item {
+    flex-direction: row;
+    text-align: left;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+
+  .trust-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .value-number {
+    align-self: flex-start;
+  }
+
+  .float-contact {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .float-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-nav a {
+    font-size: 0.95rem;
+  }
+}
