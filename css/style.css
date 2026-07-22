@@ -1408,6 +1408,15 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-4px);
 }
 
+.service-card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
 /* ===== TOAST ===== */
 .toast {
   position: fixed;
