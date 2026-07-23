@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+  return; /* static grid — no slider needed */
+
   var track = document.querySelector('.testimonials-track');
   var prevBtn = document.querySelector('.t-nav--prev');
   var nextBtn = document.querySelector('.t-nav--next');
@@ -24,6 +26,13 @@
     return viewport.offsetWidth / slidesPerView;
   }
 
+  function updateCardWidths() {
+    var slideWidth = getSlideWidth();
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.flex = '0 0 ' + slideWidth + 'px';
+    }
+  }
+
   function goTo(index) {
     var slideWidth = getSlideWidth();
     var maxIndex = Math.max(0, totalSlides - slidesPerView);
@@ -33,6 +42,7 @@
 
     currentIndex = index;
     track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+    updateCardWidths();
     updateButtons();
     updateDots();
   }

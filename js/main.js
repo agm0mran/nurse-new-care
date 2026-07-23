@@ -101,7 +101,7 @@
   // Booking form handling - WhatsApp integration
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
-    const WHATSAPP_NUMBER = '201200625243';
+    const WHATSAPP_NUMBER = '201201966477';
 
     bookingForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -142,7 +142,7 @@
   // Contact form handling - WhatsApp integration
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    const WHATSAPP_NUMBER = '201200625243';
+    const WHATSAPP_NUMBER = '201201966477';
 
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
