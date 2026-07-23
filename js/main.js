@@ -98,81 +98,85 @@
     });
   }
 
-  // Booking form handling
+  // Booking form handling - WhatsApp integration
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
+    const WHATSAPP_NUMBER = '201200625243';
+
     bookingForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const submitBtn = this.querySelector('.btn-submit');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending...';
+      const name = document.getElementById('bf-name').value.trim();
+      const phone = document.getElementById('bf-phone').value.trim();
+      const area = document.getElementById('bf-area').value;
+      const service = document.getElementById('bf-service').value;
+      const notes = document.getElementById('bf-notes').value.trim();
 
-      const formData = new FormData(this);
+      if (!name || !phone || !area || !service) {
+        showToast('Please fill in all required fields.', 'error');
+        return;
+      }
 
-      fetch(this.action, {
-        method: 'POST',
-        body: formData
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('Network error');
-          return res.json();
-        })
-        .then(function (data) {
-          if (data.success) {
-            showToast('Booking request sent! We will contact you shortly.', 'success');
-            bookingForm.reset();
-          } else {
-            showToast('Something went wrong. Please try again.', 'error');
-          }
-        })
-        .catch(function () {
-          showToast('Something went wrong. Please try again.', 'error');
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        });
+      const whatsappMessage =
+        '\uD83C\uDFE5 New Booking Request\n' +
+        '\n' +
+        '\uD83D\uDC64 Full Name:\n' + name + '\n' +
+        '\n' +
+        '\uD83D\uDCF1 Phone:\n' + phone + '\n' +
+        '\n' +
+        '\uD83D\uDCCD Area:\n' + area + '\n' +
+        '\n' +
+        '\uD83E\uDE7A Requested Service:\n' + service + '\n' +
+        '\n' +
+        '\uD83D\uDCDD Notes:\n' + (notes || 'Not provided');
+
+      const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(whatsappMessage);
+
+      window.open(whatsappUrl, '_blank');
+
+      showToast('Booking request sent! We will contact you shortly.', 'success');
+      bookingForm.reset();
     });
   }
 
-  // Contact form handling
+  // Contact form handling - WhatsApp integration
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    const WHATSAPP_NUMBER = '201200625243';
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const submitBtn = this.querySelector('.btn-submit');
-      const originalText = submitBtn.innerHTML;
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending...';
+      const name = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const phone = document.getElementById('cf-phone').value.trim();
+      const service = document.getElementById('cf-service').value;
+      const message = document.getElementById('cf-message').value.trim();
 
-      const formData = new FormData(this);
+      if (!name || !email || !phone || !message) {
+        showToast('Please fill in all required fields.', 'error');
+        return;
+      }
 
-      fetch(this.action, {
-        method: 'POST',
-        body: formData
-      })
-        .then(function (res) {
-          if (!res.ok) throw new Error('Network error');
-          return res.json();
-        })
-        .then(function (data) {
-          if (data.success) {
-            showToast('Message sent successfully! We will get back to you soon.', 'success');
-            contactForm.reset();
-          } else {
-            showToast('Something went wrong. Please try again.', 'error');
-          }
-        })
-        .catch(function () {
-          showToast('Something went wrong. Please try again.', 'error');
-        })
-        .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        });
+      const whatsappMessage =
+        '\uD83C\uDFE5 New Contact Form Submission\n' +
+        '\n' +
+        '\uD83D\uDC64 Full Name:\n' + name + '\n' +
+        '\n' +
+        '\uD83D\uDCE7 Email:\n' + email + '\n' +
+        '\n' +
+        '\uD83D\uDCF1 Phone:\n' + phone + '\n' +
+        '\n' +
+        '\uD83E\uDE7A Requested Service:\n' + (service || 'Not specified') + '\n' +
+        '\n' +
+        '\uD83D\uDCAC Message:\n' + message;
+
+      const whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(whatsappMessage);
+
+      window.open(whatsappUrl, '_blank');
+
+      showToast('Message sent successfully! We will get back to you soon.', 'success');
+      contactForm.reset();
     });
   }
 
