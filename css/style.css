@@ -274,6 +274,16 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(135deg, var(--primary-bg) 0%, #fff 100%);
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/HeroSection.webp') no-repeat center / contain;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
