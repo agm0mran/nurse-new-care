@@ -54,9 +54,9 @@
   const navLinks = document.querySelectorAll('.site-nav a');
   navLinks.forEach(function (link) {
     const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath.endsWith('/') && href === 'index.html')) {
-      link.classList.add('active');
-    } else if (currentPath.endsWith(href) && href !== '#') {
+    const page = currentPath.replace(/\.html$/, '').replace(/^\/|\/$/g, '') || 'index';
+    const linkPage = href.replace(/\.html$/, '').replace(/^\/|\/$/g, '');
+    if (page === linkPage) {
       link.classList.add('active');
     }
   });
