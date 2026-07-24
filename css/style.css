@@ -1393,6 +1393,77 @@ p:last-child { margin-bottom: 0; }
   display: block;
 }
 
+/* ===== VISITS TYPES ===== */
+.visits-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.visit-type-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.visit-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.visit-type-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.visit-type-card:hover::before {
+  transform: scaleX(1);
+}
+
+.visit-type-card .icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 16px;
+  margin-bottom: 8px;
+}
+
+.visit-type-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.visit-type-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  flex: 1;
+  line-height: 1.7;
+}
+
 /* ===== TOAST ===== */
 .toast {
   position: fixed;
