@@ -1,12 +1,11 @@
 (function () {
   'use strict';
 
-  return; /* static grid — no slider needed */
-
   var track = document.querySelector('.testimonials-track');
   var prevBtn = document.querySelector('.t-nav--prev');
   var nextBtn = document.querySelector('.t-nav--next');
   var dotsContainer = document.querySelector('.testimonials-dots');
+  var isRtl = document.documentElement.dir === 'rtl';
 
   if (!track || !prevBtn || !nextBtn) return;
 
@@ -41,7 +40,8 @@
     if (index > maxIndex) index = maxIndex;
 
     currentIndex = index;
-    track.style.transform = 'translateX(-' + (currentIndex * slideWidth) + 'px)';
+    var offset = currentIndex * slideWidth;
+    track.style.transform = isRtl ? 'translateX(' + offset + 'px)' : 'translateX(-' + offset + 'px)';
     updateCardWidths();
     updateButtons();
     updateDots();
@@ -96,10 +96,18 @@
     var endX = e.changedTouches[0].clientX;
     var diff = startX - endX;
     if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        goTo(currentIndex + 1);
+      if (isRtl) {
+        if (diff > 0) {
+          goTo(currentIndex - 1);
+        } else {
+          goTo(currentIndex + 1);
+        }
       } else {
-        goTo(currentIndex - 1);
+        if (diff > 0) {
+          goTo(currentIndex + 1);
+        } else {
+          goTo(currentIndex - 1);
+        }
       }
     }
   }, { passive: true });
