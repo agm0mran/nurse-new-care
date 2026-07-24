@@ -238,6 +238,19 @@
   text-align: right;
 }
 
+/* Visits types */
+[dir="rtl"] .visit-type-card {
+  text-align: right;
+}
+
+[dir="rtl"] .visit-type-card::before {
+  transform-origin: right;
+}
+
+[dir="rtl"] .visit-type-card:hover::before {
+  transform-origin: right;
+}
+
 /* Trust strip icons alignment on mobile */
 @media (max-width: 480px) {
   [dir="rtl"] .trust-item {
