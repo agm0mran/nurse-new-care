@@ -13,6 +13,7 @@
   var totalSlides = slides.length;
   var currentIndex = 0;
   var slidesPerView = getSlidesPerView();
+  var GAP = 24;
 
   function getSlidesPerView() {
     if (window.innerWidth >= 900) return 2;
@@ -22,7 +23,7 @@
 
   function getSlideWidth() {
     var viewport = track.parentElement;
-    return viewport.offsetWidth / slidesPerView;
+    return (viewport.offsetWidth - (slidesPerView - 1) * GAP) / slidesPerView;
   }
 
   function updateCardWidths() {
@@ -40,7 +41,7 @@
     if (index > maxIndex) index = maxIndex;
 
     currentIndex = index;
-    var offset = currentIndex * slideWidth;
+    var offset = currentIndex * (slideWidth + GAP);
     track.style.transform = isRtl ? 'translateX(' + offset + 'px)' : 'translateX(-' + offset + 'px)';
     updateCardWidths();
     updateButtons();
