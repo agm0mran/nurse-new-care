@@ -54,8 +54,8 @@
   const navLinks = document.querySelectorAll('.site-nav a');
   navLinks.forEach(function (link) {
     const href = link.getAttribute('href');
-    const page = currentPath.replace(/\.html$/, '').replace(/^\/|\/$/g, '') || 'index';
-    const linkPage = href.replace(/\.html$/, '').replace(/^\/|\/$/g, '');
+    const page = currentPath.split('/').pop().replace(/\.html$/, '') || 'index';
+    const linkPage = href.split('/').pop().replace(/\.html$/, '') || 'index';
     if (page === linkPage) {
       link.classList.add('active');
     }
