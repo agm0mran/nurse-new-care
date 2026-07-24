@@ -182,13 +182,16 @@
     grid-template-columns: 1fr;
   }
 
-  .testimonial-inner {
-    padding: 28px 24px;
+  .t-nav {
+    display: none;
   }
 
-  .t-nav {
-    width: 40px;
-    height: 40px;
+  .testimonials-dots {
+    margin-top: 24px;
+  }
+
+  .testimonial-inner {
+    padding: 28px 24px;
   }
 
   .footer-grid {
