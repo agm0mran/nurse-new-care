@@ -257,3 +257,8 @@
     text-align: right;
   }
 }
+
+/* FAQ */
+[dir="rtl"] .faq-item summary {
+  text-align: right;
+}
